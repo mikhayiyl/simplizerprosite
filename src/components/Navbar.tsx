@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Sun, Moon, Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  // Theme State
+  // Initialize theme from localStorage
   const [darkMode, setDarkMode] = useState(
     () => localStorage.getItem("theme") === "dark"
   );
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // New state for mobile menu
 
   useEffect(() => {
     const root = document.documentElement;
@@ -22,23 +22,50 @@ export default function Navbar() {
   return (
     <nav className="w-full fixed top-0 left-0 z-50 bg-sky-100 dark:bg-gray-900 text-black dark:text-white shadow-md py-4 px-6 flex items-center justify-between transition-colors duration-300">
       {/* Logo */}
-      <div className="text-xl font-bold tracking-wide">My Portfolio</div>
 
+      <div
+        onClick={() => {
+          const heroSection = document.getElementById("hero");
+          if (heroSection) {
+            heroSection.scrollIntoView({ behavior: "smooth" });
+          }
+        }}
+        className="flex items-center space-x-3 cursor-pointer select-none"
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            const heroSection = document.getElementById("hero");
+            if (heroSection) {
+              heroSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+        }}
+      >
+        <img
+          src="/logo.ico"
+          alt="SimplizerPro Logo"
+          className={`w-12 h-12 transition-opacity duration-300 ${
+            darkMode ? "filter invert" : ""
+          }`}
+        />
+        <span className="text-xl font-bold tracking-wide">SimplizerPro</span>
+      </div>
       {/* Desktop Nav Links */}
       <ul className="hidden md:flex space-x-6 font-medium">
         <li>
-          <a href="#home" className="hover:text-sky-600 transition-colors">
+          <a href="#hero" className="hover:text-sky-600 transition-colors">
             Home
           </a>
         </li>
         <li>
-          <a href="#services" className="hover:text-sky-600 transition-colors">
-            Services
+          <a href="#about" className="hover:text-sky-600 transition-colors">
+            About
           </a>
         </li>
         <li>
-          <a href="#projects" className="hover:text-sky-600 transition-colors">
-            Projects
+          <a href="#skills" className="hover:text-sky-600 transition-colors">
+            Skills
           </a>
         </li>
         <li>
@@ -47,7 +74,6 @@ export default function Navbar() {
           </a>
         </li>
       </ul>
-
       {/* Mobile Menu Button */}
       <button
         onClick={() => setMenuOpen(!menuOpen)}
@@ -55,30 +81,29 @@ export default function Navbar() {
       >
         {menuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
-
       {/* Mobile Nav Menu */}
       {menuOpen && (
         <div className="absolute top-16 right-6 w-48 bg-sky-100 dark:bg-gray-900 shadow-lg rounded-lg p-4 flex flex-col space-y-4 md:hidden">
           <a
-            href="#home"
+            href="#hero"
             className="hover:text-sky-600 transition"
             onClick={() => setMenuOpen(false)}
           >
             Home
           </a>
           <a
-            href="#services"
+            href="#about"
             className="hover:text-sky-600 transition"
             onClick={() => setMenuOpen(false)}
           >
-            Services
+            About
           </a>
           <a
-            href="#projects"
+            href="#skills"
             className="hover:text-sky-600 transition"
             onClick={() => setMenuOpen(false)}
           >
-            Projects
+            Skills
           </a>
           <a
             href="#contact"
@@ -89,7 +114,6 @@ export default function Navbar() {
           </a>
         </div>
       )}
-
       {/* Dark Mode Toggle */}
       <button
         onClick={() => setDarkMode(!darkMode)}
