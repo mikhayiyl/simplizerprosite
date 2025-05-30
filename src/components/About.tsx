@@ -73,8 +73,8 @@ export default function About() {
       >
         <p className="mb-4 font-semibold text-gray-900 dark:text-gray-100 tracking-wide">
           👋 Hello! I'm
-          <span className="text-blue-600 dark:text-blue-300"> Mikhayiyl</span>,
-          a passionate
+          <span className="text-blue-600 dark:text-blue-300"> Dancan</span>, a
+          passionate
           <span className="text-pink-500 dark:text-pink-400 italic">
             {" "}
             frontend and MERN stack developer
