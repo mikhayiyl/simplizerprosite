@@ -64,8 +64,8 @@ export default function Navbar() {
           </a>
         </li>
         <li>
-          <a href="#skills" className="hover:text-sky-600 transition-colors">
-            Skills
+          <a href="#services" className="hover:text-sky-600 transition-colors">
+            Services
           </a>
         </li>
         <li>
