@@ -99,11 +99,11 @@ export default function Navbar() {
             About
           </a>
           <a
-            href="#skills"
+            href="#services"
             className="hover:text-sky-600 transition"
             onClick={() => setMenuOpen(false)}
           >
-            Skills
+            Services
           </a>
           <a
             href="#contact"
