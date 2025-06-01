@@ -13,40 +13,62 @@ import {
 const services = [
   {
     title: "Custom Web Development",
-    icon: <Code className="w-6 h-6" />,
+    icon: <Code className="w-6 h-6" aria-label="Custom Web Development Icon" />,
     description:
       "Beautiful, fast, and responsive websites built with modern tech.",
   },
   {
     title: "MERN Stack Applications",
-    icon: <Server className="w-6 h-6" />,
+    icon: (
+      <Server className="w-6 h-6" aria-label="MERN Stack Applications Icon" />
+    ),
     description:
       "Scalable web apps using MongoDB, Express, React, and Node.js.",
   },
   {
     title: "Business Tool Development",
-    icon: <Briefcase className="w-6 h-6" />,
+    icon: (
+      <Briefcase
+        className="w-6 h-6"
+        aria-label="Business Tool Development Icon"
+      />
+    ),
     description: "Custom tools for invoicing, inventory, and dashboards.",
   },
   {
     title: "Bug Fixing & Optimization",
-    icon: <Wrench className="w-6 h-6" />,
+    icon: <Wrench className="w-6 h-6" aria-label="Bug Fixing Icon" />,
     description: "Speed improvements and UI debugging for smooth performance.",
   },
   {
     title: "Landing Page Development",
-    icon: <RocketIcon className="w-6 h-6" />,
+    icon: (
+      <RocketIcon
+        className="w-6 h-6"
+        aria-label="Landing Page Development Icon"
+      />
+    ),
     description: "High-converting, responsive landing pages optimized for SEO.",
   },
   {
     title: "Developer Collaboration",
-    icon: <UsersIcon className="w-6 h-6" />,
+    icon: (
+      <UsersIcon
+        className="w-6 h-6"
+        aria-label="Developer Collaboration Icon"
+      />
+    ),
     description:
       "Team collaboration, UI design integration, and agile support.",
   },
   {
     title: "Custom Dashboard Development",
-    icon: <LayoutDashboardIcon className="w-6 h-6" />,
+    icon: (
+      <LayoutDashboardIcon
+        className="w-6 h-6"
+        aria-label="Dashboard Development Icon"
+      />
+    ),
     description: "Powerful admin dashboards using Next.js and React.",
   },
 ];
@@ -59,9 +81,10 @@ export default function Services() {
       ref={sectionRef}
       id="services"
       className="relative min-h-screen flex flex-col items-center justify-center 
-                 bg-[url('/textures/bg-services.svg')] bg-cover bg-center 
+                 bg-[url('/textures/bg-services.svg')] bg-cover bg-center lazy-load 
                  dark:bg-gradient-to-br dark:from-[#0f0f1b] dark:via-[#1b1b2f] dark:to-black 
                  text-black dark:text-white px-6 py-16 md:px-20 md:py-24 scroll-mt-16 overflow-hidden"
+      role="region"
       aria-labelledby="services-heading"
     >
       {/* Floating Background Shapes */}
@@ -94,12 +117,8 @@ export default function Services() {
 
       {/* Heading */}
       <header className="relative z-10 w-full max-w-3xl">
-        <motion.h2
+        <h2
           id="services-heading"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-extrabold mb-8 text-center"
         >
           <span
@@ -111,7 +130,7 @@ export default function Services() {
             What I{" "}
             <span className="text-pink-600 dark:text-pink-400">Offer</span>
           </span>
-        </motion.h2>
+        </h2>
       </header>
 
       {/* Services List */}
@@ -134,7 +153,7 @@ export default function Services() {
                  ring-1 ring-white/20 dark:ring-white/10"
           >
             <article>
-              <header className="flex items-center gap-6 mb-6 text-blue-700 dark:text-blue-300">
+              <header className="flex items-center gap-6 mb-6 text-primary dark:text-primary-dark">
                 <div className="p-3 rounded-full bg-blue-100 dark:bg-white/10">
                   {service.icon}
                 </div>
