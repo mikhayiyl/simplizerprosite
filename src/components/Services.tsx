@@ -121,12 +121,7 @@ export default function Services() {
           id="services-heading"
           className="text-4xl md:text-5xl font-extrabold mb-8 text-center"
         >
-          <span
-            className="inline-block px-6 py-3 rounded-xl shadow-lg backdrop-blur-sm
-                 bg-white/80 dark:bg-transparent
-                 dark:bg-gradient-to-r dark:from-blue-600 dark:via-pink-500 dark:to-yellow-400
-                 dark:bg-clip-text dark:text-transparent"
-          >
+          <span className="inline-block px-6 py-3 rounded-xl shadow-lg backdrop-blur-sm bg-white/80 dark:bg-transparent dark:bg-gradient-to-r dark:from-blue-600 dark:via-pink-500 dark:to-yellow-400 dark:bg-clip-text dark:text-transparent">
             What I{" "}
             <span className="text-pink-600 dark:text-pink-400">Offer</span>
           </span>
@@ -148,12 +143,10 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="p-8 rounded-xl shadow-xl 
-                 bg-white/80 dark:bg-white/10 backdrop-blur-xl 
-                 ring-1 ring-white/20 dark:ring-white/10"
+            className="p-8 rounded-xl shadow-xl bg-white/80 dark:bg-white/10 backdrop-blur-xl ring-1 ring-white/20 dark:ring-white/10"
           >
             <article>
-              <header className="flex items-center gap-6 mb-6 text-primary dark:text-primary-dark">
+              <header className="flex items-center gap-6 mb-6 text-blue-700 dark:text-blue-300">
                 <div className="p-3 rounded-full bg-blue-100 dark:bg-white/10">
                   {service.icon}
                 </div>
