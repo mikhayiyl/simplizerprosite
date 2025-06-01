@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 const Hero = React.lazy(() => import("./components/Hero"));
 const About = React.lazy(() => import("./components/About"));
 const Services = React.lazy(() => import("./components/Services"));
+const Projects = React.lazy(() => import("./components/Projects"));
 const Contact = React.lazy(() => import("./components/Contact"));
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <Hero />
           <About />
           <Services />
+          <Projects />
           <Contact />
         </Suspense>
       </main>

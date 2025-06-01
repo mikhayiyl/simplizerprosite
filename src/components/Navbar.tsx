@@ -69,6 +69,11 @@ export default function Navbar() {
           </a>
         </li>
         <li>
+          <a href="#projects" className="hover:text-sky-600 transition-colors">
+            Projects
+          </a>
+        </li>
+        <li>
           <a href="#contact" className="hover:text-sky-600 transition-colors">
             Contact
           </a>
@@ -104,6 +109,13 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
           >
             Services
+          </a>
+          <a
+            href="#projects"
+            className="hover:text-sky-600 transition"
+            onClick={() => setMenuOpen(false)}
+          >
+            Projects
           </a>
           <a
             href="#contact"
